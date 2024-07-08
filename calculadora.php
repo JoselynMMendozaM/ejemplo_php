@@ -11,4 +11,19 @@
     $operacion = $valor1 + $valor2;
     echo "<br>La suma es : ", $operacion;
   }
+
+  if (isset($_GET['$btnResta'])) {
+    $operacion = $valor1 - $valor2;
+    echo "<br>La resta es : ", $operacion;
+  }
+
+  if (isset($_GET['$btnMult'])) {
+    $operacion = $valor1 * $valor2;
+    echo "<br>La multiplición es : ", $operacion;
+  }
+
+  if (isset($_GET['$btnDiv'])) {
+    $operacion = $valor1 / $valor2;
+    echo "<br>La división es : ", $operacion;
+  }
 ?>
