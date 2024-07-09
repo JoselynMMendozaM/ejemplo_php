@@ -1,29 +1,23 @@
 <?php
-  $valor1 = $_GET['txtValor1'];
-  $valor2 = $_GET['txtValor2'];
-  $operacion = 0;
+if (isset($_GET['txtValor1']) && isset($_GET['txtValor2'])) {
+    $valor1 = $_GET['txtValor1'];
+    $valor2 = $_GET['txtValor2'];
+    $resultado = "";
 
-  echo "<br>Calculadora Básica", $nombre;
-  echo "<br>Valor 1", $valor1;
-  echo "<br>Valor 2", $valor2;
+    if (isset($_GET['btnSuma'])) {
+        $resultado = $valor1 + $valor2;
+    } elseif (isset($_GET['btnResta'])) {
+        $resultado = $valor1 - $valor2;
+    } elseif (isset($_GET['btnMult'])) {
+        $resultado = $valor1 * $valor2;
+    } elseif (isset($_GET['btnDiv'])) {
+        if ($valor2 != 0) {
+            $resultado = $valor1 / $valor2;
+        } else {
+            $resultado = "Error: División por cero.";
+        }
+    }
 
-  if (isset($_GET['$btnSuma'])) {
-    $operacion = $valor1 + $valor2;
-    echo "<br>La suma es : ", $operacion;
-  }
-
-  if (isset($_GET['$btnResta'])) {
-    $operacion = $valor1 - $valor2;
-    echo "<br>La resta es : ", $operacion;
-  }
-
-  if (isset($_GET['$btnMult'])) {
-    $operacion = $valor1 * $valor2;
-    echo "<br>La multiplición es : ", $operacion;
-  }
-
-  if (isset($_GET['$btnDiv'])) {
-    $operacion = $valor1 / $valor2;
-    echo "<br>La división es : ", $operacion;
-  }
+    echo "<h1>Resultado: $resultado</h1>";
+}
 ?>
